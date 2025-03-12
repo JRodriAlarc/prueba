@@ -26,7 +26,7 @@ Seguir una convención clara al nombrar los commits facilita la comprensión del
 ### ✨ Formato recomendado 
 
 ```bash
-<tipo>(<área>): <descripción corta>
+<tipo> (área): <descripción corta>
 ```
 
 #### 📌 Ejemplo:
