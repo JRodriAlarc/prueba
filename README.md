@@ -124,3 +124,61 @@ git log --pretty="format:%h %s"
 ```
 
 Para más opciones y personalizaciones, revisa la [documentación oficial](https://devhints.io/git-log-format).
+
+### ⏸️ 3. Git Status
+
+El comando `git status` te permite ver el estado actual del repositorio en tu entorno local. Muestra los cambios que no han sido registrados **(staged)** o confirmados **(committed)**, así como las ramas activas y las diferencias con el repositorio remoto.
+
+- #### 3.1 Con `git status`, puedes revisar qué archivos están modificados, cuáles están listos para ser confirmados **(staged)** y si hay archivos sin seguimiento **(untracked)**.
+
+```bash
+git status
+```
+
+Este comando te ayudará a mantenerte informado sobre el estado de tus cambios antes de realizar una confirmación **(commit)**.
+
+### ⛔ 4. Git Diff
+
+El comando `git diff` te permite ver las diferencias entre los archivos modificados en tu entorno local y el último commit. Es útil para revisar cambios antes de hacer un commit y asegurarte de que solo se incluyan los cambios deseados.
+
+- #### 4.1 Por defecto, `git diff` muestra las diferencias en el contenido de los archivos
+
+```bash
+git diff
+```
+
+- #### 4.2 Si deseas comparar los cambios de un archivo específico, puedes indicar el **nombre del archivo**:
+
+```bash
+git diff <archivo>
+```
+
+### 🔄 5. Git Restore
+
+El comando `git restore` se utiliza para descartar cambios locales que aún no han sido confirmados. Es útil si realizas cambios en un archivo pero decides que no deseas conservarlos.
+
+Puedes usar git restore para `restaurar un archivo` a su estado en el último commit o incluso restaurar archivos eliminados.
+
+- #### 5.1 Restaurar un archivo específico al último commit
+
+```bash
+git restore <archivo>
+```
+
+- #### 5.2 Restaurar archivos a un commit específico
+
+Primero debes obtener el HASH del commit utilizando el comando `git log --oneline`, que muestra una lista de los commits con su respectivo identificador (SHA-1 hash). Luego, puedes usar el comando `git restore` especificando el commit y el archivo que deseas restaurar.
+
+- ##### 5.2.1 Obtener los commits recientes:
+
+```bash
+git log --oneline
+```
+
+- ##### 5.2.2 Restaurar un archivo desde un commit específico:
+
+```bash
+git restore --source <SHA-1-hash> <archivo>
+```
+
+Este comando **descarta los cambios locales** sin guardarlos, por lo que es importante estar seguro de que no necesitas esos cambios antes de ejecutar el comando.
