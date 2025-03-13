@@ -182,3 +182,23 @@ git restore --source <SHA-1-hash> <archivo>
 ```
 
 Este comando **descarta los cambios locales** sin guardarlos, por lo que es importante estar seguro de que no necesitas esos cambios antes de ejecutar el comando.
+
+### 🔁 6. Git Switch
+
+El comando `git switch` se utiliza para cambiar de rama en tu repositorio de Git. Fue introducido para simplificar y hacer más claro el proceso de cambiar entre ramas, reemplazando parcialmente la necesidad de usar `git checkout` para esta tarea.
+
+- #### 6.1 Cambiar a una rama existente:
+
+```bash
+git switch <nombre-de-la-rama>
+```
+
+- #### 6.2 Crear y cambiar a una nueva rama
+
+Si necesitas crear una nueva rama y cambiarte a ella en un solo paso, puedes usar la opción `-c` (de "create").
+
+```bash
+git switch -c <nueva-rama>
+```
+
+Este comando es más intuitivo que `git checkout` cuando solo necesitas trabajar con ramas, ya que `git checkout` se usa tanto para cambiar de rama como para realizar otras tareas como restaurar archivos.
